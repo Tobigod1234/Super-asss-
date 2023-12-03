@@ -34,9 +34,9 @@ os.system(f"wget {THUMB} -O thumb.jpg")
 ffmpeg = []
 ffmpeg.append("-map 0 -c:v libx265 -crf 24 -c:s copy  -s 1280x720 -preset veryfast -c:a libopus -ab 60k -vbr 2 -ac 2 -level 2.1")
 try:
-  api_id = int(os.environ.get("API_ID", default="3847632"))
-  api_hash = os.environ.get("API_HASH", default="1a9708f807ddd06b10337f2091c67657")
-  bot_token = os.environ.get("BOT_TOKEN", default="6312969509:AAFZDMCTXtxKXenbk-Bp5kX4aGUAwFp9am8")
+  API_ID = int(os.environ.get("API_ID", default="3847632"))
+  API_HASH = os.environ.get("API_HASH", default="1a9708f807ddd06b10337f2091c67657")
+  BOT_TOKEN = os.environ.get("BOT_TOKEN", default="6312969509:AAFZDMCTXtxKXenbk-Bp5kX4aGUAwFp9am8")
   DATABASE_URL = os.environ.get("DATABASE_URL", default="mongodb+srv://itzmeproman:itzmeproman@itzmeproman.qsmy0ka.mongodb.net/?retryWrites=true&w=majority")
   BOT_USERNAME = "neswtsbot"
   MAX_MESSAGE_LENGTH = 4096
@@ -48,7 +48,7 @@ try:
 except Exception as e:
    LOGS.info("ENV Are Missing")
 
-app = Client("nirusaki", api_id=api_id, api_hash=api_hash, bot_token=bot_token, workers=2)
+app = Client("nirusaki", API_ID=api_id, API_HASH=api_hash, BOT_TOKEN=bot_token, workers=2)
 0
 data = []
 
